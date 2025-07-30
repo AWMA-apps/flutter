@@ -64,7 +64,7 @@ class UserService{
                 }
             )
         );
-        final response = await _dio.get('/users');
+        //final response = await _dio.get('/users');
        // print(response.data); // 'fake data'
     }
 }
