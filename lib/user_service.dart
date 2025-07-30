@@ -17,7 +17,7 @@ class UserService{
        _dio.interceptors.add(QueuedInterceptorsWrapper(
           onRequest: (options, handler) {
             if(options.data !=null){
-                print("Options.data= ${options.data.toString()}");
+                //print("Options.data= ${options.data.toString()}");
                 options.headers['Authentication']='Bearer $_authToken';
             }
             return handler.next(options);
@@ -41,15 +41,15 @@ class UserService{
                 error += "\nStatus: ${e.response?.statusCode}";
                 error += "\nurl: ${e.response?.requestOptions.uri}";
                 error += "\nHeaders: ${e.response?.headers}";
-                print(error);
+                //print(error);
                 throw Exception("Server Error: ${e.response?.statusCode}\n\nError: $error}");
             } else {
-                print("Error Sending Request!");
-                print(e.message);
+                //print("Error Sending Request!");
+               // print(e.message);
                 throw Exception("Network Error; ${e.message}");
             }
         }catch (e){
-            print('An unexpected error occurred: $e');
+           // print('An unexpected error occurred: $e');
             throw Exception('An unexpected error occurred: $e');
         }
     }
@@ -65,6 +65,6 @@ class UserService{
             )
         );
         final response = await _dio.get('/users');
-        print(response.data); // 'fake data'
+       // print(response.data); // 'fake data'
     }
 }

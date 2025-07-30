@@ -4,7 +4,7 @@ import 'package:user_input/user_service.dart';
 import '../user.dart';
 
 class HomeScreen extends StatefulWidget {
-    HomeScreen({super.key});
+ const  HomeScreen({super.key});
 
     @override
     State<HomeScreen> createState() => _HomeScreenState();
